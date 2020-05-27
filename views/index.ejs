@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <title>Index</title>
+</head>
+<body>
+  <h1>Budget</h1>
+
+  <% let sum = 0 %>
+  <% for (let i = 0; i < budget.length; i += 1){
+    sum += Number(budget[i].amount) %>
+
+  <% } %>
+  <h4>Total current balance is:</h4><h3>$<%=sum %></h3>
+
+  <table>
+    <% 
+      for (let i = 0; i < budget.length; i += 1){
+        %>
+          <tr>
+
+            <td>
+                <%= budget[i].date %>
+            </td>
+            
+            <td>
+              <a href="/show/<%=i %>">
+                <%= budget[i].name %>
+              </a>
+            </td>
+
+            <td>
+                <%= budget[i].amount %>
+            </td>
+          </tr>
+        <%
+      }
+    %>
+      
+  </table>
+  <a href="/show/new"> <button>Create New Item</button> </a>
+</body>
+</html>
